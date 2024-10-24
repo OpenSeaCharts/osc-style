@@ -1,0 +1,1 @@
+# OpenSeaCharts Style
