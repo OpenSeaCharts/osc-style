@@ -21,7 +21,10 @@
       "maxzoom": 18,
       "tileSize": 256
     },
-    "openseacharts": {"type": "vector", "url": "http://127.0.0.1:3000/seamarks"}
+    "openseacharts": {
+      "type": "vector",
+      "url": "pmtiles://https://pub-d2551c5d39b9474c8938b01fbba8c6ba.r2.dev/seamarks.pmtiles"
+    }
   },
   "sprite": "https://raw.githubusercontent.com/josxha/vector-seamarks/main/sprites/seamarks-sprites",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
