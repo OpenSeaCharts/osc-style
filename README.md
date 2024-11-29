@@ -6,3 +6,7 @@ supports PMTiles.
 ```url
 https://raw.githubusercontent.com/OpenSeaCharts/osc-style/refs/heads/main/openseacharts.json
 ```
+
+It is possible to edit the style
+on a [Maputnik instance with PMTiles supports](https://editor.protomaps.com/).
+
