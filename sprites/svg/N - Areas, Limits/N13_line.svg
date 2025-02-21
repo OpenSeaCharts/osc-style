@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="36.7px" height="13.1px" viewBox="0 0 36.7 13.1" style="enable-background:new 0 0 36.7 13.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#C480FF;}
+	.st1{fill:none;stroke:#C480FF;stroke-width:5;}
+</style>
+<symbol  id="line_plane" viewBox="-14 -41.7 28 83.3">
+	<path class="st0" d="M14,15.3v-48l-8-8L14,15.3z"/>
+	<path class="st0" d="M10,39.3l-8-72c0-5-2.7-9-6-9s-6,4-6,9c-0.5,3-1.9,5.8-4,8l13.6,48c-6.2,1.6-11.2,6.1-13.6,12
+		C-7.8,41.9,2,43.6,10,39.3z"/>
+	<line class="st1" x1="2" y1="-8.7" x2="10" y2="-12.7"/>
+</symbol>
+<use xlink:href="#line_plane"  width="28" height="83.3" x="-14" y="-41.7" transform="matrix(1.046478e-07 0.3202 -0.3202 1.046478e-07 17.7865 6.4029)" style="overflow:visible;"/>
+</svg>

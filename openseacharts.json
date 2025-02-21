@@ -240,7 +240,6 @@
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-image": "N12",
-        "icon-size": 0.15,
         "text-size": 13
       },
       "paint": {"text-color": "#a30075"}
@@ -259,7 +258,6 @@
         "text-ignore-placement": true,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
-        "icon-size": 0.25,
         "icon-rotation-alignment": "auto",
         "icon-pitch-alignment": "map"
       },
@@ -279,8 +277,7 @@
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-allow-overlap": true,
-        "icon-ignore-placement": true,
-        "icon-size": 0.25
+        "icon-ignore-placement": true
       }
     },
     {
@@ -299,7 +296,6 @@
         "text-anchor": "top-left",
         "icon-anchor": "bottom",
         "icon-image": "P10.1_sdf",
-        "icon-size": 0.3,
         "icon-rotation-alignment": "auto",
         "icon-offset": [0, 190],
         "icon-rotate": ["+", 135, ["*", 18, ["get", "index"]]],
@@ -327,7 +323,7 @@
         "text-anchor": "top",
         "icon-anchor": "center",
         "icon-offset": [0, 0],
-        "icon-size": 0.2,
+        "icon-size": 1,
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-image": [
@@ -356,7 +352,6 @@
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
         "text-field": "",
-        "icon-size": 0.3,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -379,7 +374,6 @@
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
         "text-field": "{name}",
-        "icon-size": 0.4,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -428,7 +422,6 @@
           "Q22_sdf"
         ],
         "text-size": 13,
-        "icon-size": 0.25,
         "icon-keep-upright": false,
         "icon-optional": false
       },
@@ -450,7 +443,7 @@
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
         "text-field": {"stops": [[14, ""], [16, "{name}"]]},
-        "icon-size": 0.4,
+        "icon-size": 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -471,7 +464,6 @@
         "text-font": ["Roboto Regular"],
         "text-field": "",
         "visibility": "visible",
-        "icon-size": 0.5,
         "icon-image": [
           "match",
           ["get", "category"],
