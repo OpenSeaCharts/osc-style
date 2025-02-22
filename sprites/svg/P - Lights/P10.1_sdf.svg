@@ -1,12 +1,14 @@
-<svg
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"  
-   version="1.0"
-   width="300"
-   height="400">
-  <symbol id="light" width="300" height="400">
-    <path d="m 150.69407,173.39285 -16.26654,-71.74379 -1.17753,-5.259324 0.0973,-5.23432 1.96562,-5.04129 3.46815,-4.25872 4.51806,-2.94214 5.22439,-1.36669 5.53573,0.35678 5.18437,1.9681 4.03247,3.33471 2.31384,4.43909 0.9886,5.17195 0.26517,5.55505 0.0113,1.13107 -16.16094,73.889834 z m 1.85232,28.22309 c -0.89201,1.39526 -2.74824,1.80367 -4.14349,0.91164 -1.39524,-0.89203 -1.80365,-2.74828 -0.91162,-4.14353 0.89201,-1.39526 2.74824,-1.80367 4.14348,-0.91164 1.39524,0.89203 1.80366,2.74828 0.91163,4.14353 z"
-     style="fill-opacity:1;fill-rule:evenodd" />
-  </symbol>
-  <use xlink:href="#light" x="0" y="0" />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="300px" height="400px" viewBox="0 0 300 400" style="enable-background:new 0 0 300 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;}
+</style>
+<symbol  id="light" viewBox="-53.6 -200 107.1 400">
+	<path class="st0" d="M2,105.6l-51.9-228.8l-3.8-16.8l0.3-16.7l6.3-16.1l11.1-13.6l14.4-9.4l16.7-4.4l17.7,1.1l16.5,6.3L42.2-182
+		l7.4,14.2l3.2,16.5l0.8,17.7l0,3.6L2,105.6L2,105.6z M8,195.6c-2.8,4.4-8.8,5.8-13.2,2.9c-4.4-2.8-5.8-8.8-2.9-13.2
+		c2.8-4.4,8.8-5.8,13.2-2.9C9.5,185.2,10.8,191.1,8,195.6z"/>
+</symbol>
+<use xlink:href="#light"  width="107.1" height="400" id="XMLID_1_" x="-53.6" y="-200" transform="matrix(1 0 0 1 150 200)" style="overflow:visible;"/>
 </svg>

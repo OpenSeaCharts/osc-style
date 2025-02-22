@@ -9,11 +9,11 @@ find svg -type f -exec cp {} tmp/svg/ \;
 # install with `sudo apt-get install librsvg2-bin`
 for old in tmp/svg/*; do
     new="./tmp/svg1x/$(basename "$old")"
-    rsvg-convert "$old" -a -f svg -w 20 -o "$new"
+    rsvg-convert "$old" -a -f svg -w 26 -o "$new"
 done
 for old in tmp/svg/*; do
     new="./tmp/svg2x/$(basename "$old")"
-    rsvg-convert "$old" -a -f svg -w 20 -d 192 -p 192 -o "$new"
+    rsvg-convert "$old" -a -f svg -w 26 -d 52 -p 52 -o "$new"
 done
 
 # Generate sprites, install spreet with `brew install flother/taps/spreet` or `cargo install spreet`
