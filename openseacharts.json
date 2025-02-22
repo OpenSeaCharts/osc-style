@@ -40,7 +40,7 @@
       "id": "openseamap",
       "type": "raster",
       "source": "openseamap",
-      "layout": {"visibility": "none"},
+      "layout": {"visibility": "visible"},
       "paint": {"raster-opacity": 0.3}
     },
     {
@@ -62,7 +62,8 @@
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "dumping_ground",
-      "paint": {"fill-color": "rgba(126, 126, 126, 1)"}
+      "layout": {"visibility": "visible"},
+      "paint": {"fill-color": "rgba(126, 126, 126, 0.5)"}
     },
     {
       "id": "ponton",
@@ -161,11 +162,16 @@
       "source": "openseacharts",
       "source-layer": "cable",
       "minzoom": 10,
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible",
+        "line-join": "miter",
+        "line-cap": "butt"
+      },
       "paint": {
         "line-pattern": "L40",
         "line-width": 6,
-        "line-color": "rgba(255, 107, 94, 1)"
+        "line-color": "rgba(255, 107, 94, 1)",
+        "line-translate-anchor": "map"
       }
     },
     {
@@ -185,7 +191,11 @@
       "type": "line",
       "source": "openseacharts",
       "source-layer": "restricted_area",
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "butt",
+        "line-join": "bevel"
+      },
       "paint": {
         "line-pattern": [
           "match",
@@ -194,7 +204,7 @@
           "N2.1",
           "N2.1"
         ],
-        "line-width": 10
+        "line-width": 5
       }
     },
     {
@@ -233,7 +243,7 @@
         "text-font": ["Roboto Regular"],
         "text-field": "{name}",
         "visibility": "visible",
-        "icon-anchor": "right",
+        "icon-anchor": "center",
         "text-anchor": "top-left",
         "icon-ignore-placement": true,
         "icon-allow-overlap": true,
@@ -271,40 +281,20 @@
       "minzoom": 8,
       "layout": {
         "text-field": "{name}",
-        "icon-image": "K24",
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-allow-overlap": true,
-        "icon-ignore-placement": true
-      }
-    },
-    {
-      "id": "light",
-      "type": "symbol",
-      "source": "openseacharts",
-      "source-layer": "light",
-      "minzoom": 10,
-      "layout": {
-        "text-field": "{character}",
-        "text-font": ["Roboto Regular"],
         "icon-ignore-placement": true,
-        "icon-allow-overlap": true,
-        "icon-optional": false,
-        "visibility": "visible",
-        "text-anchor": "top-left",
-        "icon-anchor": "bottom",
-        "icon-image": "P10.1_sdf",
-        "icon-rotation-alignment": "auto",
-        "icon-offset": [0, 190],
-        "icon-rotate": ["+", 135, ["*", 18, ["get", "index"]]],
-        "text-allow-overlap": true,
-        "text-ignore-placement": true,
-        "text-offset": [0, 1],
-        "text-size": 13
-      },
-      "paint": {"icon-color": ["get", "color"]}
+        "icon-image": [
+          "match",
+          ["get", "category"],
+          "non-dangerous",
+          "K29",
+          "K24"
+        ]
+      }
     },
     {
       "id": "harbour",
@@ -403,7 +393,7 @@
       "layout": {
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
-        "text-field": "{name}",
+        "text-field": ["step", ["zoom"], "", 13, ["get", "name"]],
         "icon-allow-overlap": {"stops": [[1, false], [16, true]], "base": 1},
         "icon-ignore-placement": false,
         "text-allow-overlap": true,
@@ -499,6 +489,32 @@
         "text-allow-overlap": true,
         "text-ignore-placement": true
       }
+    },
+    {
+      "id": "light",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "light",
+      "minzoom": 10,
+      "layout": {
+        "text-field": "{character}",
+        "text-font": ["Roboto Regular"],
+        "icon-ignore-placement": true,
+        "icon-allow-overlap": true,
+        "icon-optional": false,
+        "visibility": "visible",
+        "text-anchor": "top-left",
+        "icon-anchor": "bottom",
+        "icon-image": "P10.1_sdf",
+        "icon-rotation-alignment": "auto",
+        "icon-rotate": ["+", 135, ["*", 18, ["get", "index"]]],
+        "text-allow-overlap": true,
+        "text-ignore-placement": true,
+        "text-size": 13,
+        "text-offset": [0, 1],
+        "icon-offset": [1, -5]
+      },
+      "paint": {"icon-color": ["get", "color"]}
     }
   ],
   "id": "osm-liberty",
