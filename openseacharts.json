@@ -26,7 +26,7 @@
       "url": "pmtiles://https://pub-d2551c5d39b9474c8938b01fbba8c6ba.r2.dev/seamarks.pmtiles"
     }
   },
-  "sprite": "https://raw.githubusercontent.com/josxha/vector-seamarks/main/sprites/seamarks-sprites",
+  "sprite": "https://raw.githubusercontent.com/OpenSeaCharts/osc-style/main/sprites/sprites",
   "glyphs": "https://orangemug.github.io/font-glyphs/glyphs/{fontstack}/{range}.pbf",
   "layers": [
     {
