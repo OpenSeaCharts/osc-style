@@ -27,7 +27,7 @@ jq 'walk(if type == "object" then with_entries(
 ) else . end)' "sprites.json" > $temp_file
 mv $temp_file "sprites.json"
 
-#jq 'walk(if type == "object" then with_entries(
-#    if (.key | endswith("_sdf")) then .value |= . + {"sdf": true} else . end
-#) else . end)' "sprites@2x.json" > $temp_file
-#mv $temp_file "sprites@2x.json"
+jq 'walk(if type == "object" then with_entries(
+    if (.key | endswith("_sdf")) then .value |= . + {"sdf": true} else . end
+) else . end)' "sprites@2x.json" > $temp_file
+mv $temp_file "sprites@2x.json"
