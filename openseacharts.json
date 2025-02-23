@@ -40,7 +40,7 @@
       "id": "openseamap",
       "type": "raster",
       "source": "openseamap",
-      "layout": {"visibility": "visible"},
+      "layout": {"visibility": "none"},
       "paint": {"raster-opacity": 0.3}
     },
     {
@@ -119,6 +119,7 @@
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "sea_area",
+      "layout": {"visibility": "visible"},
       "paint": {"fill-color": "rgba(0, 155, 255, 0.17)"}
     },
     {
@@ -250,7 +251,8 @@
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-image": "N12",
-        "text-size": 13
+        "text-size": 13,
+        "text-offset": [0.5, 0.5]
       },
       "paint": {"text-color": "#a30075"}
     },
@@ -259,6 +261,7 @@
       "type": "symbol",
       "source": "openseacharts",
       "source-layer": "rock",
+      "minzoom": 13,
       "layout": {
         "text-field": "{name}",
         "icon-image": "K11",
@@ -278,7 +281,7 @@
       "type": "symbol",
       "source": "openseacharts",
       "source-layer": "wreck",
-      "minzoom": 8,
+      "minzoom": 10,
       "layout": {
         "text-field": "{name}",
         "visibility": "visible",
@@ -304,10 +307,16 @@
       "minzoom": 8,
       "maxzoom": 17,
       "layout": {
-        "text-field": {"stops": [[13, ""], [14, "{name}"]]},
+        "text-field": [
+          "step",
+          ["zoom"],
+          "",
+          14,
+          ["to-string", ["get", "name"]]
+        ],
         "text-font": ["Roboto Regular"],
-        "icon-ignore-placement": true,
-        "icon-allow-overlap": true,
+        "icon-ignore-placement": false,
+        "icon-allow-overlap": {"stops": [[0, false], [12, true]]},
         "icon-optional": false,
         "visibility": "visible",
         "text-anchor": "top",
@@ -363,7 +372,7 @@
       "layout": {
         "visibility": "visible",
         "text-font": ["Roboto Regular"],
-        "text-field": "{name}",
+        "text-field": ["step", ["zoom"], "", 13, ["get", "name"]],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
@@ -515,6 +524,14 @@
         "icon-offset": [1, -5]
       },
       "paint": {"icon-color": ["get", "color"]}
+    },
+    {
+      "id": "spring",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "spring",
+      "minzoom": 13,
+      "layout": {"icon-image": "J15"}
     }
   ],
   "id": "osm-liberty",
