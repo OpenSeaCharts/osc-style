@@ -9,14 +9,18 @@
   "sources": {
     "openstreetmap": {
       "type": "raster",
-      "tiles": ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      "tiles": [
+        "https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+      ],
       "minzoom": 0,
       "maxzoom": 20,
       "tileSize": 256
     },
     "openseamap": {
       "type": "raster",
-      "tiles": ["https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"],
+      "tiles": [
+        "https://tiles.openseamap.org/seamark/{z}/{x}/{y}.png"
+      ],
       "minzoom": 0,
       "maxzoom": 18,
       "tileSize": 256
@@ -33,124 +37,474 @@
       "id": "openstreetmap",
       "type": "raster",
       "source": "openstreetmap",
-      "layout": {"visibility": "visible"},
-      "paint": {"raster-resampling": "linear"}
+      "filter": [
+        "all"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "raster-resampling": "linear"
+      }
     },
     {
       "id": "openseamap",
       "type": "raster",
       "source": "openseamap",
-      "layout": {"visibility": "none"},
-      "paint": {"raster-opacity": 0.3}
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "raster-opacity": 0.3
+      }
     },
     {
       "id": "anchor_berth",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "anchor_berth",
-      "paint": {"fill-color": "rgba(255, 209, 95, 0.17)"}
+      "paint": {
+        "fill-color": "rgba(255, 209, 95, 0.17)"
+      }
     },
     {
       "id": "cable_area",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "cable_area",
-      "paint": {"fill-color": "rgba(139, 53, 139, 0.3)"}
+      "paint": {
+        "fill-color": "rgba(139, 53, 139, 0.3)"
+      }
     },
     {
       "id": "dumping_ground",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "dumping_ground",
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(126, 126, 126, 0.5)"}
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(126, 126, 126, 0.5)"
+      }
     },
     {
       "id": "ponton",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "pontoon",
-      "paint": {"fill-color": "rgba(255, 164, 0, 1)"}
+      "paint": {
+        "fill-color": "rgba(255, 164, 0, 1)"
+      }
     },
     {
       "id": "dredged_area",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "dredged_area",
-      "paint": {"fill-color": "rgba(126, 126, 126, 1)"}
+      "paint": {
+        "fill-color": "rgba(126, 126, 126, 1)"
+      }
     },
     {
       "id": "coastguard_station",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "coastguard_station",
-      "paint": {"fill-color": "rgba(126, 126, 126, 1)"}
+      "paint": {
+        "fill-color": "rgba(126, 126, 126, 1)"
+      }
     },
     {
       "id": "checkpoint",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "checkpoint",
-      "paint": {"fill-color": "rgba(126, 126, 126, 1)"}
+      "paint": {
+        "fill-color": "rgba(126, 126, 126, 1)"
+      }
     },
     {
       "id": "causeway",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "causeway",
-      "paint": {"fill-color": "rgba(126, 126, 126, 1)"}
+      "paint": {
+        "fill-color": "rgba(126, 126, 126, 1)"
+      }
     },
     {
       "id": "bunker_station",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "bunker_station",
-      "paint": {"fill-color": "rgba(255, 209, 95, 0.25)"}
+      "paint": {
+        "fill-color": "rgba(255, 209, 95, 0.25)"
+      }
     },
     {
       "id": "anchorage_area",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "anchorage",
-      "paint": {"fill-color": "rgba(255, 209, 95, 0.17)"}
+      "paint": {
+        "fill-color": "rgba(255, 209, 95, 0.17)"
+      }
     },
     {
       "id": "sea_area",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "sea_area",
-      "layout": {"visibility": "visible"},
-      "paint": {"fill-color": "rgba(0, 155, 255, 0.17)"}
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(0, 155, 255, 0.17)"
+      }
+    },
+    {
+      "id": "conveyor",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "conveyor",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(200, 200, 200, 0.5)"
+      }
+    },
+    {
+      "id": "separation",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "separation",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(229, 179, 229, 0.3)"
+      }
+    },
+    {
+      "id": "seabed",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "seabed",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(238, 238, 238, 0.5)"
+      }
+    },
+    {
+      "id": "seaplane_landing_area",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "seaplane_landing_area",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(100, 100, 100, 0.2)"
+      }
+    },
+    {
+      "id": "protected_area",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "protected_area",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(144, 238, 144, 0.3)"
+      }
+    },
+    {
+      "id": "fairway",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "fairway",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(200, 200, 255, 0.2)"
+      }
+    },
+    {
+      "id": "precautionary_area",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "precautionary_area",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(255, 200, 200, 0.2)"
+      }
+    },
+    {
+      "id": "shoreline_construction",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "shoreline_construction",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(180, 180, 180, 1)"
+      }
+    },
+    {
+      "id": "sea",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "sea",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(0, 155, 255, 0.17)"
+      }
+    },
+    {
+      "id": "seagrass",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "seagrass",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(144, 238, 144, 0.4)"
+      }
+    },
+    {
+      "id": "gridiron",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "gridiron",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(150, 100, 50, 0.5)"
+      }
+    },
+    {
+      "id": "dry_dock",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "dry_dock",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(200, 200, 200, 1)"
+      }
+    },
+    {
+      "id": "weed",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "weed",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(100, 200, 100, 0.4)"
+      }
+    },
+    {
+      "id": "seabed_area",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "seabed_area",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(200, 200, 200, 0.3)"
+      }
+    },
+    {
+      "id": "marine",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "marine",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(100, 100, 200, 0.3)"
+      }
+    },
+    {
+      "id": "military_area",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "military_area",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(255, 100, 100, 0.2)"
+      }
+    },
+    {
+      "id": "berth",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "berth",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(200, 200, 200, 1)"
+      }
+    },
+    {
+      "id": "floating_dock",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "floating_dock",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(180, 180, 180, 1)"
+      }
+    },
+    {
+      "id": "harbour_basin",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "harbour_basin",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(0, 155, 255, 0.2)"
+      }
+    },
+    {
+      "id": "sand_waves",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "sand_waves",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(240, 240, 200, 0.5)"
+      }
+    },
+    {
+      "id": "turning_basin",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "turning_basin",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(0, 155, 255, 0.2)"
+      }
+    },
+    {
+      "id": "production",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "production",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(100, 100, 100, 0.3)"
+      }
+    },
+    {
+      "id": "lock",
+      "type": "fill",
+      "source": "openseacharts",
+      "source-layer": "lock",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-color": "rgba(150, 150, 150, 1)"
+      }
     },
     {
       "id": "wreck_area",
       "type": "fill",
       "source": "openseacharts",
       "source-layer": "wreck",
-      "layout": {"visibility": "visible"}
+      "layout": {
+        "visibility": "visible"
+      }
     },
     {
       "id": "recommended_track",
       "type": "line",
       "source": "openseacharts",
       "source-layer": "recommended_track",
-      "layout": {"visibility": "visible"},
-      "paint": {"line-width": 1, "line-color": "rgba(104, 102, 102, 1)"}
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": 1,
+        "line-color": "rgba(104, 102, 102, 1)"
+      }
     },
     {
       "id": "building",
       "type": "line",
       "source": "openseacharts",
       "source-layer": "building",
-      "layout": {"visibility": "visible"},
-      "paint": {"line-width": 1, "line-color": "rgba(104, 102, 102, 1)"}
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-width": 1,
+        "line-color": "rgba(104, 102, 102, 1)"
+      }
     },
     {
       "id": "wall",
       "type": "line",
       "source": "openseacharts",
       "source-layer": "wall",
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-pattern": "L40",
         "line-width": 6,
@@ -170,17 +524,131 @@
       },
       "paint": {
         "line-pattern": "L40",
-        "line-width": 6,
+        "line-width": 4,
         "line-color": "rgba(255, 107, 94, 1)",
         "line-translate-anchor": "map"
       }
     },
     {
-      "id": "bridge",
+      "id": "harbour_limit",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "harbour_limit",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(100, 100, 100, 1)",
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "gate",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "gate",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": 2
+      }
+    },
+    {
+      "id": "recommended",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "recommended",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(100, 100, 100, 1)",
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
+      "id": "pipeline",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "pipeline",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(200, 100, 100, 1)",
+        "line-dasharray": [
+          3,
+          1
+        ]
+      }
+    },
+    {
+      "id": "ferry",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "ferry",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(100, 100, 200, 1)",
+        "line-dasharray": [
+          4,
+          2
+        ]
+      }
+    },
+    {
+      "id": "leading_line",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "leading_line",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-dasharray": [
+          5,
+          5
+        ]
+      }
+    },
+    {
+      "id": "navigation",
+      "type": "line",
+      "source": "openseacharts",
+      "source-layer": "navigation",
+      "minzoom": 8,
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(100, 100, 100, 1)"
+      }
+    },
+    {
+      "id": "bridge_line",
       "type": "line",
       "source": "openseacharts",
       "source-layer": "bridge",
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "line-pattern": "L40",
         "line-width": 6,
@@ -200,8 +668,13 @@
       "paint": {
         "line-pattern": [
           "match",
-          ["get", "restriction"],
+          [
+            "get",
+            "restriction"
+          ],
           "no_entry",
+          "N2.1",
+          "no_anchoring",
           "N2.1",
           "N2.1"
         ],
@@ -214,12 +687,26 @@
       "source": "openseacharts",
       "source-layer": "pile",
       "minzoom": 15,
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "circle-pitch-scale": "map",
         "circle-translate-anchor": "map",
         "circle-pitch-alignment": "map",
-        "circle-radius": {"base": 1, "stops": [[15, 2], [20, 5]]}
+        "circle-radius": {
+          "base": 1,
+          "stops": [
+            [
+              15,
+              2
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
       }
     },
     {
@@ -228,11 +715,24 @@
       "source": "openseacharts",
       "source-layer": "mooring",
       "minzoom": 16,
-      "layout": {"visibility": "visible"},
+      "layout": {
+        "visibility": "visible"
+      },
       "paint": {
         "circle-pitch-alignment": "map",
         "circle-translate-anchor": "map",
-        "circle-radius": {"stops": [[16, 1], [20, 5]]}
+        "circle-radius": {
+          "stops": [
+            [
+              16,
+              1
+            ],
+            [
+              20,
+              5
+            ]
+          ]
+        }
       }
     },
     {
@@ -241,7 +741,9 @@
       "source": "openseacharts",
       "source-layer": "anchorage",
       "layout": {
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "text-field": "{name}",
         "visibility": "visible",
         "icon-anchor": "center",
@@ -252,9 +754,14 @@
         "text-ignore-placement": true,
         "icon-image": "N12",
         "text-size": 13,
-        "text-offset": [0.5, 0.5]
+        "text-offset": [
+          0.5,
+          0.5
+        ]
       },
-      "paint": {"text-color": "#a30075"}
+      "paint": {
+        "text-color": "#a30075"
+      }
     },
     {
       "id": "rock",
@@ -266,7 +773,9 @@
         "text-field": "{name}",
         "icon-image": "K11",
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-allow-overlap": true,
@@ -274,7 +783,9 @@
         "icon-rotation-alignment": "auto",
         "icon-pitch-alignment": "map"
       },
-      "paint": {"icon-translate-anchor": "map"}
+      "paint": {
+        "icon-translate-anchor": "map"
+      }
     },
     {
       "id": "wreck",
@@ -285,16 +796,27 @@
       "layout": {
         "text-field": "{name}",
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "icon-image": [
           "match",
-          ["get", "category"],
-          "non-dangerous",
+          [
+            "get",
+            "category"
+          ],
+          "dangerous",
+          "K28",
+          "non_dangerous",
           "K29",
+          "distributed_remains",
+          "K29",
+          "hull_showing",
+          "K24",
           "K24"
         ]
       }
@@ -304,30 +826,57 @@
       "type": "symbol",
       "source": "openseacharts",
       "source-layer": "harbour",
-      "minzoom": 8,
+      "minzoom": 10,
       "maxzoom": 17,
       "layout": {
         "text-field": [
           "step",
-          ["zoom"],
+          [
+            "zoom"
+          ],
           "",
           14,
-          ["to-string", ["get", "name"]]
+          [
+            "to-string",
+            [
+              "get",
+              "name"
+            ]
+          ]
         ],
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "icon-ignore-placement": false,
-        "icon-allow-overlap": {"stops": [[0, false], [12, true]]},
+        "icon-allow-overlap": {
+          "stops": [
+            [
+              0,
+              false
+            ],
+            [
+              12,
+              true
+            ]
+          ]
+        },
         "icon-optional": false,
         "visibility": "visible",
         "text-anchor": "top",
         "icon-anchor": "center",
-        "icon-offset": [0, 0],
+        "icon-offset": [
+          0,
+          0
+        ],
         "icon-size": 1,
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-image": [
           "match",
-          ["get", "category"],
+          [
+            "get",
+            "category"
+          ],
           "marina",
           "U1.1",
           "marina_no_facilities",
@@ -336,10 +885,15 @@
           "F10",
           "F"
         ],
-        "text-offset": [0, 1],
+        "text-offset": [
+          0,
+          1
+        ],
         "text-size": 13
       },
-      "paint": {"text-color": "#a30075"}
+      "paint": {
+        "text-color": "#a30075"
+      }
     },
     {
       "id": "beacon-pole",
@@ -349,7 +903,9 @@
       "minzoom": 10,
       "layout": {
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "text-field": "",
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -361,7 +917,12 @@
         "icon-image": "Q90_sdf",
         "text-justify": "center"
       },
-      "paint": {"icon-color": ["get", "color"]}
+      "paint": {
+        "icon-color": [
+          "get",
+          "color"
+        ]
+      }
     },
     {
       "id": "beacon",
@@ -371,27 +932,54 @@
       "minzoom": 10,
       "layout": {
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
-        "text-field": ["step", ["zoom"], "", 13, ["get", "name"]],
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          13,
+          [
+            "get",
+            "name"
+          ]
+        ],
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-anchor": "bottom",
         "text-anchor": "top-left",
-        "text-offset": [1, 0],
+        "text-offset": [
+          1,
+          0
+        ],
         "text-optional": false,
         "icon-image": [
           "match",
-          ["get", "shape"],
+          [
+            "get",
+            "shape"
+          ],
           "spherical",
           "Q100_sdf",
           "Q100_sdf"
         ],
-        "icon-offset": [0, -50],
+        "icon-offset": [
+          0,
+          -50
+        ],
         "text-size": 13
       },
-      "paint": {"icon-color": ["get", "color"]}
+      "paint": {
+        "icon-color": [
+          "get",
+          "color"
+        ]
+      }
     },
     {
       "id": "buoy",
@@ -401,19 +989,50 @@
       "minzoom": 10,
       "layout": {
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
-        "text-field": ["step", ["zoom"], "", 13, ["get", "name"]],
-        "icon-allow-overlap": {"stops": [[1, false], [16, true]], "base": 1},
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-field": [
+          "step",
+          [
+            "zoom"
+          ],
+          "",
+          13,
+          [
+            "get",
+            "name"
+          ]
+        ],
+        "icon-allow-overlap": {
+          "stops": [
+            [
+              1,
+              false
+            ],
+            [
+              16,
+              true
+            ]
+          ],
+          "base": 1
+        },
         "icon-ignore-placement": false,
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "icon-anchor": "bottom",
         "text-anchor": "top-left",
-        "text-offset": [1, 0],
+        "text-offset": [
+          1,
+          0
+        ],
         "text-optional": false,
         "icon-image": [
           "match",
-          ["get", "shape"],
+          [
+            "get",
+            "shape"
+          ],
           "spherical",
           "Q22_sdf",
           "can",
@@ -425,7 +1044,10 @@
         "icon-optional": false
       },
       "paint": {
-        "icon-color": ["get", "color"],
+        "icon-color": [
+          "get",
+          "color"
+        ],
         "icon-translate-anchor": "map",
         "icon-halo-color": "#000",
         "icon-halo-blur": 0
@@ -440,8 +1062,21 @@
       "layout": {
         "icon-image": "no_anchoring",
         "visibility": "visible",
-        "text-font": ["Roboto Regular"],
-        "text-field": {"stops": [[14, ""], [16, "{name}"]]},
+        "text-font": [
+          "Roboto Regular"
+        ],
+        "text-field": {
+          "stops": [
+            [
+              14,
+              ""
+            ],
+            [
+              16,
+              "{name}"
+            ]
+          ]
+        },
         "icon-size": 1,
         "icon-allow-overlap": true,
         "icon-ignore-placement": true,
@@ -449,7 +1084,10 @@
         "text-ignore-placement": true,
         "icon-anchor": "center",
         "text-anchor": "top-left",
-        "text-offset": [1, 0],
+        "text-offset": [
+          1,
+          0
+        ],
         "text-optional": false
       }
     },
@@ -460,12 +1098,17 @@
       "source-layer": "small_craft_facility",
       "minzoom": 15,
       "layout": {
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "text-field": "",
         "visibility": "visible",
         "icon-image": [
           "match",
-          ["get", "category"],
+          [
+            "get",
+            "category"
+          ],
           "toilets",
           "U23",
           "visitor_berth",
@@ -491,10 +1134,27 @@
           "array",
           "number",
           2,
-          ["*", 60, ["get", "offset_x"]],
-          ["*", 60, ["get", "offset_y"]]
+          [
+            "*",
+            60,
+            [
+              "get",
+              "offset_x"
+            ]
+          ],
+          [
+            "*",
+            60,
+            [
+              "get",
+              "offset_y"
+            ]
+          ]
         ],
-        "text-offset": [0, 0],
+        "text-offset": [
+          0,
+          0
+        ],
         "text-allow-overlap": true,
         "text-ignore-placement": true
       }
@@ -507,7 +1167,9 @@
       "minzoom": 10,
       "layout": {
         "text-field": "{character}",
-        "text-font": ["Roboto Regular"],
+        "text-font": [
+          "Roboto Regular"
+        ],
         "icon-ignore-placement": true,
         "icon-allow-overlap": true,
         "icon-optional": false,
@@ -516,14 +1178,47 @@
         "icon-anchor": "bottom",
         "icon-image": "P10.1_sdf",
         "icon-rotation-alignment": "auto",
-        "icon-rotate": ["+", 135, ["*", 18, ["get", "index"]]],
+        "icon-rotate": [
+          "+",
+          135,
+          [
+            "*",
+            18,
+            [
+              "get",
+              "index"
+            ]
+          ]
+        ],
         "text-allow-overlap": true,
         "text-ignore-placement": true,
         "text-size": 13,
-        "text-offset": [0, 1],
-        "icon-offset": [1, -5]
+        "text-offset": [
+          0,
+          1
+        ],
+        "icon-offset": [
+          1,
+          -5
+        ]
       },
-      "paint": {"icon-color": ["get", "color"]}
+      "paint": {
+        "icon-color": [
+          "get",
+          "color"
+        ]
+      }
+    },
+    {
+      "id": "bridge",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "bridge",
+      "minzoom": 15,
+      "layout": {
+        "icon-image": "D20",
+        "text-field": ""
+      }
     },
     {
       "id": "spring",
@@ -531,7 +1226,325 @@
       "source": "openseacharts",
       "source-layer": "spring",
       "minzoom": 13,
-      "layout": {"icon-image": "J15"}
+      "layout": {
+        "icon-image": "J15"
+      }
+    },
+    {
+      "id": "signal",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "signal",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "text-offset": [
+          0,
+          1
+        ],
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "leading_mark",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "leading_mark",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "rescue",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "rescue",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "radio",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "radio",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "pilot_boarding",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "pilot_boarding",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "landmark",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "landmark",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "radar",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "radar",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "small",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "small",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "platform",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "platform",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "fishing_facility",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "fishing_facility",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "hazard",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "hazard",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "pole",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "pole",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "distance_mark",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "distance_mark",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "waterway_gauge",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "waterway_gauge",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "obstruction",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "obstruction",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "water_turbulence",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "water_turbulence",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "hulk",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "hulk",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "exceptional_structure",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "exceptional_structure",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "fog_signal",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "fog_signal",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "boat_hoist",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "boat_hoist",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "tank",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "tank",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "sunken_ship",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "sunken_ship",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "pylon",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "pylon",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
+    },
+    {
+      "id": "vehicle_transfer",
+      "type": "symbol",
+      "source": "openseacharts",
+      "source-layer": "vehicle_transfer",
+      "minzoom": 8,
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 12,
+        "visibility": "visible"
+      },
+      "paint": {}
     }
   ],
   "id": "osm-liberty",

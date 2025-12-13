@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  check-sprites:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y librsvg2-bin
+          # Install spreet. Since it's not in apt, we use cargo.
+          # Checking if there is a pre-built binary or faster way would be good, but cargo is reliable.
+          cargo install spreet
+
+      - name: Generate Sprites
+        run: python sprites/generate_sprites.py
+
+      - name: Check for changes
+        run: |
+          # If there are changes to the sprite files, this command will fail (exit code 1)
+          git diff --exit-code sprites/sprites.json sprites/sprites.png sprites/sprites@2x.json sprites/sprites@2x.png
+
+  validate-style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install MapLibre Style Spec
+        run: npm install -g @maplibre/maplibre-gl-style-spec
+
+      - name: Validate Style
+        run: gl-style-validate openseacharts.json
+
